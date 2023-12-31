@@ -1,4 +1,4 @@
-Certainly, here's a concise version for easy copying:
+Certainly, here's the Markdown code that you can copy and paste into your README.md:
 
 ```markdown
 # Terminal Whisper - Node.js Chat Application
@@ -94,4 +94,4 @@ Feel free to contribute to the project by submitting issues or pull requests on 
 This project is licensed under the MIT License.
 ```
 
-Feel free to copy and paste this into your GitHub README.md file.
+You can copy and paste this code into your README.md file on GitHub.
