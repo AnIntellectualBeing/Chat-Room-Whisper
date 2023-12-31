@@ -1,4 +1,4 @@
-Certainly, here's the Markdown code that you can copy and paste into your README.md:
+
 
 ```markdown
 # Terminal Whisper - Node.js Chat Application
