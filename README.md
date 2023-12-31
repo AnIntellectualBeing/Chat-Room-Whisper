@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # Terminal Whisper - Node.js Chat Application
 
 Welcome to the Terminal Whisper Chat Node.js Application! This simple chat allows users to communicate anonymously in real-time using a terminal.
@@ -93,5 +93,3 @@ Feel free to contribute to the project by submitting issues or pull requests on 
 
 This project is licensed under the MIT License.
 ```
-
-You can copy and paste this code into your README.md file on GitHub.
