@@ -1,0 +1,6 @@
+#Ignore all files
+*
+
+#Except these 2
+!server.js
+!/public/

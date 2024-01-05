@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal Whisper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    #chat-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #messages {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Type your message...">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('message', (data) => {
+      const messagesContainer = document.getElementById('messages');
+      messagesContainer.innerHTML += `<p>${data.sender}: ${data.message}</p>`;
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    });
+
+    document.getElementById('messageInput').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value.trim();
+        if (message !== '') {
+          socket.emit('message', { sender: 'You', message });
+          messageInput.value = '';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
